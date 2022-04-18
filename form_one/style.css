@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'lato',sans-serif;
+}
+body{
+    overflow: hidden;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg,red,blue);
+
+}
+.container{
+    background: rgb(216, 203, 203);
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 5px;
+
+
+}
+.container .title{
+    font-size: 25px;
+    font-weight: 600;
+    position: relative;
+}
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(135deg,red,blue);
+
+
+}
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+
+}
+.container form .input-box{
+    margin-bottom: 15px;
+    width: calc(100%/2 - 20px);
+
+}
+.container .input-box input{
+    height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+
+
+}
+
+.container .input-box .detail{
+    font-weight: 550;
+    margin-bottom: 5px;
+    display: block;
+}
+.container .input-box input:focus,
+.container .input-box input:valid{
+    border-color: red;
+}
+.container .gender-details .gender-titles{
+    font-size: 25px;
+    font-weight: 600;
+
+}
+.container .gender-details .catagory{ 
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 14px 0;
+
+
+}
+.gender-details .catagory label{
+    display: flex;
+    align-items: center;
+}
+.gender-details .catagory .dot{
+    height: 18px;
+    width: 18px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+
+
+}
+#dot-1:checked ~ .catagory label .one,
+#dot-2:checked ~ .catagory label .two,
+#dot-3:checked ~ .catagory label .three{
+    border-color: #d9d9d9;
+    background: #9b59b6;
+}
+form input[type="radio"]{
+    display: none;
+}
+form .button{
+    height: 45px;
+    margin: 45px 0;
+
+
+}
+form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(135deg,red,blue);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 5px;
+
+}
+form .button input:hover{
+    background: linear-gradient(-135deg,red,blue);
+}
+@media (max-width:584px) {
+    .container{
+        max-width: 100%;
+    }
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    
+    }
+    form .gender-details .catagory{ 
+        width: 100%;
+    }
+    .container form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+}
